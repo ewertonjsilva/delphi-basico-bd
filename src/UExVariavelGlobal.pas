@@ -10,6 +10,7 @@ type
   TFUExVariavelGlobal = class(TForm)
     lbl_txt: TLabel;
     btn_txt: TButton;
+    procedure btn_txtClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -22,5 +23,12 @@ var
 implementation
 
 {$R *.dfm}
+
+uses UPrincipal;
+
+procedure TFUExVariavelGlobal.btn_txtClick(Sender: TObject);
+begin
+  lbl_txt.Caption := FPrincipal.texto;
+end;
 
 end.

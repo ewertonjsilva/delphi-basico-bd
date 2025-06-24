@@ -9,9 +9,6 @@ uses
 
 type
   TFPrincipal = class(TForm)
-    edt_edit: TEdit;
-    btn_botao: TButton;
-    lbl_label: TLabel;
     pnl_calculadora: TPanel;
     edt_n3: TEdit;
     btn_somar: TButton;
@@ -20,6 +17,10 @@ type
     btn_subtrair: TButton;
     btn_dividir: TButton;
     btn_multiplicar: TButton;
+    pnl_coisas: TPanel;
+    lbl_label: TLabel;
+    edt_edit: TEdit;
+    btn_botao: TButton;
     procedure btn_botaoClick(Sender: TObject);
     procedure btn_somarClick(Sender: TObject);
     procedure btn_subtrairClick(Sender: TObject);
@@ -30,7 +31,7 @@ type
     procedure calculadora(operacao: string);
     function fCalculadora(operacao: string): Single;
   public
-    { Public declarations }
+    texto: string;
   end;
 
 var
@@ -40,13 +41,15 @@ implementation
 
 {$R *.dfm}
 
+uses UExVariavelGlobal;
+
 procedure TFPrincipal.btn_botaoClick(Sender: TObject);
-var
-  texto: string;
 begin
   texto := edt_edit.Text;
   edt_edit.Text := '';
   lbl_label.Caption := texto;
+
+  FUExVariavelGlobal.ShowModal;
 end;
 
 procedure TFPrincipal.btn_dividirClick(Sender: TObject);

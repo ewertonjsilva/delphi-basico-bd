@@ -10,6 +10,7 @@ object FUExVariavelGlobal: TFUExVariavelGlobal
   Font.Height = -21
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poScreenCenter
   TextHeight = 30
   object lbl_txt: TLabel
     Left = 8
@@ -25,5 +26,6 @@ object FUExVariavelGlobal: TFUExVariavelGlobal
     Height = 36
     Caption = 'Exibir mensagem'
     TabOrder = 0
+    OnClick = btn_txtClick
   end
 end
